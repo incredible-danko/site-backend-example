@@ -1,0 +1,45 @@
+{
+  "name": "erр-worker",
+  "version": "1.0.12",
+  "description": "Erр-worker",
+  "main": "src/Main.js",
+  "private": true,
+  "scripts": {
+    "start": "node src/Main.js",
+    "lint:js": "eslint src/**/*.js",
+    "watch:test": "nodemon --debug=0.0.0.0:5858 --watch ./test --watch ./src --exec 'istanbul cover _mocha './test/**/*.test.js' -- -R spec || true' --delay 1",
+    "watch": "nodemon --watch ./src --watch ../common/src src/Main.js",
+    "test": "mocha test"
+  },
+  "author": "Sample",
+  "license": "ISC",
+  "dependencies": {
+    "ioredis": "^3.2.2",
+    "jsonwebtoken": "^8.1.0",
+    "kue": "^0.11.6",
+    "lodash": "^4.17.4",
+    "moment": "^2.20.1",
+    "moment-timezone": "^0.5.14",
+    "odoo-xmlrpc": "^1.0.6",
+    "request": "^2.83.0",
+    "xlsx": "^0.11.15",
+    "xml2js": "^0.4.19",
+    "xmlrpc": "^1.3.2"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-date-string": "^0.1.0",
+    "chai-http": "^3.0.0",
+    "del": "^3.0.0",
+    "eslint": "^4.14.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.5.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^4.0.1",
+    "nodemon": "^1.11.0",
+    "sinon": "^4.1.3",
+    "sinon-chai": "^2.14.0"
+  }
+}

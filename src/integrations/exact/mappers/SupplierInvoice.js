@@ -1,0 +1,17 @@
+module.exports = Common.Utils.Mapper([
+	// { src: 'Booked', dest: 'active', type: 'boolean' },
+	{ src: 'invoiceType', dest: 'type', default: 'invoice', required: true },
+	// { src: 'Cancelled', dest: 'canceled', default: false, type: 'boolean' },
+	{ src: 'EntryNumber', dest: 'meta.invoiceNumber', required: true },
+	{ src: 'ID', dest: 'meta.serialNumber' },
+	{ src: 'Description', dest: 'meta.message' },
+	{ src: 'InvoiceDate', dest: 'dates.invoiceSent', type: 'date' },
+	{ src: 'DueDate', dest: 'dates.invoiceDue', type: 'date' },
+	{ src: 'VATAmount', dest: 'sums.tax', type: 'float' },
+	{ src: 'Amount', dest: 'sums.invoiceTotal', type: 'float', required: true },
+	{ src: 'Currency', dest: 'sums.currency', default: 'SEK' },
+	// { src: 'CreditReference', dest: 'credits[0]' },
+	{ src: 'Supplier', dest: 'meta.supplierNumber' },
+	// { src: 'YourReference', dest: 'contact.internal.name' },
+	// { src: 'OurReference', dest: 'contact.general.name' },
+]);

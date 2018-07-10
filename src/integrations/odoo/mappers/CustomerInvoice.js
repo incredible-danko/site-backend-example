@@ -1,0 +1,18 @@
+module.exports = Common.Utils.Mapper([
+// 	{ src: 'RotReducedInvoicingType', dest: 'type', default: 'invoice', required: true },
+	{ src: 'number', dest: 'meta.invoiceNumber', required: true },
+	{ src: 'date', dest: 'dates.invoiceSent', type: 'date' },
+	{ src: 'date_due', dest: 'dates.invoiceDue', type: 'date' },
+	{ src: 'amount_tax', dest: 'sums.tax', type: 'float' },
+	{ src: 'amount_total', dest: 'sums.invoiceTotal', type: 'float', required: true },
+	{ src: 'currency_id[1]', dest: 'sums.currency', default: 'SEK' },
+	{ src: 'partner_id[0]', dest: 'meta.customerNumber' },
+	{ src: 'create_uid[1]', dest: 'contact.internal.name' },
+// 	{ src: 'OurReference', dest: 'contact.general.name' },
+// 	{ src: 'DeliveryCustomerName', dest: 'contact.shipping.name' },
+// 	{ src: 'DeliveryAddress1', dest: 'contact.shipping.street' },
+// 	{ src: 'DeliveryAddress2', dest: 'contact.shipping.street2' },
+// 	{ src: 'DeliveryPostalCode', dest: 'contact.shipping.city' },
+// 	{ src: 'DeliveryCity', dest: 'contact.shipping.zipcode' },
+// 	{ src: 'DeliveryCountryCode', dest: 'contact.shipping.country' },
+]);
